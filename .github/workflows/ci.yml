@@ -18,11 +18,13 @@ jobs:
           node-version: 20 # Specify your project's Node version
           cache: 'npm'     # Enables caching for faster dependency installs
 
-      # Step 3: Clean install dependencies based on package-lock.json
+    
       - name: Install dependencies
         run: npm ci
 
-      # Step 4: Execute the linting rules
+      - name: Install Linter
+        run: npm install --save-dev
+        
       - name: Run ESlint
         run: npm run lint
   
